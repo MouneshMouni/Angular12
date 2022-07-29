@@ -1,0 +1,20 @@
+<table width="100%">
+    <tr>
+        <th >Id</th>
+        <th >Customer Id</th>
+        <th >Product Name</th>
+        <th >Quantity</th>
+        <th>Unit Price</th>
+        <th>Line Total</th>
+    </tr>
+    <tbody>
+        <tr *ngFor="let order of orders" align="center">
+            <td>{{order.id}}</td>
+            <td>{{order.customerId}}</td>
+            <td>{{order.productName}}</td>
+            <td>{{order.quantity}}</td>
+            <td>{{order.unitPrice |currency:currencyCode}}</td>
+            <td>{{order.lineTotal}}</td>
+        </tr>
+    </tbody>
+</table>

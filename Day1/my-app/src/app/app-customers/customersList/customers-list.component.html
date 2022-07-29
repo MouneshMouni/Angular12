@@ -1,0 +1,38 @@
+<h3 appHighlight>{{title}}</h3>
+<app-filter-textbox (filterCriteriaChanged)="filterCustomers($event)"></app-filter-textbox>
+<br>
+<br>
+<button (click)="saveFilterList()">Save Filter List</button> || <button (click)="loadFilterList()">Load Filter List</button>
+<br>
+<table width="100%">
+    <tr>
+        <th (click)="sortCustomers('id')">Id<img src="../assets/icons/up-arrow.png" height="10px" [hidden]="isAscOrder">
+            <img src="../assets/icons/down-arrow.png" height="10px" [hidden]="!isAscOrder"></th>
+        <th (click)="sortCustomers('name')">Name</th>
+        <th (click)="sortCustomers('city')">City</th>
+        <th (click)="sortCustomers('customerSince')">Customer Since</th>
+        <th (click)="sortCustomers('orderTotal')">Order Total</th>
+    </tr>
+    <tbody>
+        <tr *ngFor="let cust of filteredCustomerTypes | genericArraySorter: 'customerSince':'yes'" align="center">
+            <td>{{cust.id}}</td>
+            <td>{{cust.name | nameTransformer}}</td>
+            <td>{{cust.city}}</td>
+            <td>{{cust.customerSince| date: 'yyyy-MM-dd'}}</td>
+            <td align="right">{{cust.orderTotal |currency:currencyCode}}</td>
+        </tr>
+        <!--Row for total-->
+        <tr *ngIf="customers && filteredCustomerTypes.length" class="totalOrder">
+            <td colspan="4">Orders Total</td>
+            <td align="right">{{ordersTotal | currency:currencyCode}}</td>
+        </tr>
+        <!--Row for Record Count-->
+        <tr *ngIf="customers && filteredCustomerTypes.length" class="recordCount">
+            <td colspan="4">Number of Records</td>
+            <td align="right">{{filteredCustomerTypes.length}}</td>
+        </tr>
+        <tr *ngIf="!customers || !filteredCustomerTypes.length" class="noRecordCount">
+            <td colspan="5" align="center">No Records Found</td>
+        </tr>
+    </tbody>
+</table>

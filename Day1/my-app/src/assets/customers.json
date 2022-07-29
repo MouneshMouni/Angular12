@@ -1,0 +1,8 @@
+[
+    {"id":101,"name":"Angela Merkel","city":"Berlin","customerSince":"22-Jul-2017","orderTotal":5555.55},
+    {"id":102,"name":"Kevin Marsh","city":"London","customerSince":"15-Aug-2018","orderTotal":6666.66},
+    {"id":103,"name":"Hamid Ajbouti","city":"Kiev","customerSince":"09-Dec-2014","orderTotal":7777.55},
+    {"id":104,"name":"Elon Musk","city":"Gotenburg","customerSince":"07-Jan-2011","orderTotal":2222.55},
+    {"id":105,"name":"Patty Berger","city":"New Delhi","customerSince":"09-Jun-2012","orderTotal":4444.55},
+    {"id":106,"name":"Ian Zachariah","city":"Hyderabad","customerSince":"14-Feb-2020","orderTotal":3333.55}
+]
